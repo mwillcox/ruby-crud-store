@@ -1,0 +1,14 @@
+<h1>Available Products</h1>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-4">
+      <a href="/products/<%= product.id %>">
+        
+      <div class="info-background">
+        <p><%= product.title %></p>
+        <p><%= number_to_currency(product.price) %></p>
+      </div>
+      </a>
+    </div>
+  <% end %>
+</div>
