@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RubyCrudStore</title>
+    <title>Meesh Store</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,13 +9,24 @@
   </head>
 
   <body>
-  	<div class="container">
-	  	<ul class="nav nav-pills">
-		  <li role="presentation" class="active"><a href="#">Home</a></li>
-		  <li role="presentation"><a href="#">Products</a></li>
-		  <li role="presentation"><a href="#">Cart</a></li>
-		</ul>
-  	
+  	<% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= message %>
+      </div>
+    <% end %>
+	<nav class="navbar navbar-default">
+    <ul class="nav nav-pills">
+      <li role="presentation"><%= link_to "Home", "/" %></li>
+        <% if current_user %>
+          <li><%= link_to "Logout", "/logout", method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", "/signup" %></li>
+          <li><%= link_to "Login", "/login" %></li>
+        <% end %>
+	   </ul>
+	</nav>
+	<div class="container">
     	<%= yield %>
 	</div>
   </body>
