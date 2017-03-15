@@ -1,11 +1,12 @@
 <div class="row">
-  <div class="col-lg-6">
-    <ul class="info-background">
-      <li>Name: <%= @product.title %></li>
-      <li class="price">Price: <%= number_to_currency(@product.price) %></li>
-      <li>Tax: <%= number_to_currency(@product.tax) %></li>
-      <li>Total: <%= number_to_currency(@product.total) %></li>
-    </ul>
+  <div class="col-lg-4">
+    <div class="well">
+      <h2><%= @product.title %></h2>
+      <h4 class="price">Price: <%= number_to_currency(@product.price) %></h4>
+      <h4>Tax: <%= number_to_currency(@product.tax) %></h4>
+      <h3>Total: <%= number_to_currency(@product.total) %></h3>
+    </div>
+    <h4><%=link_to "Back to Products", "/products"%>
   </div>
   <div class="col-lg-6">
     <img class="image-show img-responsive" src="<%= @product.image %>">

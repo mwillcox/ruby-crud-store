@@ -7,14 +7,14 @@
 </h1>
 <div class="row">
   <% @products.each do |product| %>
-    <div class="col-md-4">
+    <div class="product-grid-item col-md-3 well">
       <a href="/products/<%= product.id %>">
         <div class="img-wrapper">
           <img class="img-responsive" src="<%= product.image %>">
         </div>
-		<div class="info-background">
-			<p><%= product.title %> - <%= number_to_currency(product.price) %></p>
-		</div>
+			  <h4><%= product.title %></h4>
+      </a> 
+      <p><%= number_to_currency(product.price) %></p>
       </a>
     </div>
   <% end %>

@@ -2,10 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .img-wrapper{
-	max-width: 400px;
+	max-width: 500px;
 	height: auto;
 }
 
 .price{
 	color: red;
+}
+
+.product-grid-item{
+  margin:15px;
+  min-height: 360px;
+  min-width: 350px;
+}
+
+.product-grid-item img{
+  max-width: 300px;
+  padding-bottom: 10px;
 }
